@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #a78bfa;
+  --color-primary-focus: #8b5cf6;
+  --color-secondary: #2dd4bf;
+  --color-accent: #f472b6;
+  --color-neutral: #111827;
+  --color-neutral-content: #4b5563;
+  --color-base-100: #f6f4fc;
+  --color-base-200: #ede9fe;
+  --color-base-300: #e5e7eb;
+  --color-info: #3b82f6;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
