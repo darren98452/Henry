@@ -64,15 +64,32 @@ npm run build && firebase deploy
 
 ## Project Structure
 Henry/
-├── components/       # React UI components
-├── views/            # Page-level components
-├── services/         # Firebase and API service layers
-├── contexts/         # React context providers
-├── hooks/            # Custom React hooks
-├── sakt/             # Python Cloud Function (SAKT model)
-│   └── main.py       # ML model + Firebase Function entry point
-├── public/           # Static assets
-└── dist/             # Production build output
+Got it! Here's the corrected project structure block you can paste directly into GitHub:
+
+```
+Henry/
+├── components/         # Reusable React UI components
+├── views/              # Page-level components
+├── services/           # Firebase and API service layers
+├── contexts/           # React context providers
+├── hooks/              # Custom React hooks
+├── database/           # Database schema and helpers
+├── sakt/               # Python Cloud Function (SAKT ML model)
+│   └── main.py         # SAKT model + Firebase Function entry point
+├── public/             # Static assets
+├── dist/               # Production build output
+├── App.tsx             # Root React component
+├── index.tsx           # App entry point
+├── constants.ts        # App-wide constants
+├── types.ts            # TypeScript type definitions
+├── firebase.json       # Firebase configuration
+├── firestore.rules     # Firestore security rules
+├── vite.config.ts      # Vite build configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── tsconfig.json       # TypeScript configuration
+```
+
+This matches exactly what you have in your project.
 ## Live App
 
 🌐 [henry-sakt.web.app](https://henry-sakt.web.app)
