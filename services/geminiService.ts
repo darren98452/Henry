@@ -1,5 +1,5 @@
-import type { Word, SrsInteraction } from '../types';
-import { getSaktPythonScript } from './saktScript';
+import type { Word } from '../types';
+
 
 // --- Configuration ---
 const API_KEY =
@@ -159,29 +159,3 @@ export const getWordDetails = async (word: string): Promise<Word | null> => {
   }
 };
 
-export const calculateKnowledgeState = async (
-  word: string,
-  history: SrsInteraction[],
-): Promise<{ mastery: number; interval: number; repetition: number } | null> => {
-  if (!ai) return null;
-  try {
-    const now = new Date().toISOString();
-    const pythonCode = getSaktPythonScript(word, history.slice(-50), now);
-
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.0-flash',
-      contents: `Run this python logic mentally and return JSON:\n${pythonCode}`,
-      config: { safetySettings },
-    });
-
-    const parsed = parseGeminiResponse(response.text);
-
-    return {
-      mastery: parsed.mastery,
-      interval: parsed.interval,
-      repetition: parsed.repetition || 0,
-    };
-  } catch {
-    return null;
-  }
-};

@@ -1,21 +1,22 @@
 {
   "functions": [
     {
-      "source": "functions",
-      "codebase": "default",
+      "source": "sakt",
+      "runtime": "python312",
+      "codebase": "henry",
       "disallowLegacyRuntimeConfig": true,
       "ignore": [
-        "node_modules",
+        "venv",
         ".git",
         "firebase-debug.log",
         "firebase-debug.*.log",
         "*.local"
-      ],
-      "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
     }
   ],
+  "firestore": {
+    "rules": "firestore.rules"
+  },
   "hosting": {
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
